@@ -121,8 +121,7 @@ def test_future_boarddocs_entry_does_not_suppress_calendar_events(spider):
         ]
         today = datetime.now(tz=ZoneInfo(spider.timezone)).date()
         valid_dates = [
-            datetime.strptime(m["numberdate"], "%Y%m%d").date()
-            for m in fake_meetings
+            datetime.strptime(m["numberdate"], "%Y%m%d").date() for m in fake_meetings
         ]
         past_dates = [d for d in valid_dates if d <= today]
         last_bd = max(past_dates) if past_dates else today
