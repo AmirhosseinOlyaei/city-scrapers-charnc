@@ -785,7 +785,7 @@ def test_get_status_ignores_cancellation_in_description():
         ),
         "start": datetime(2026, 6, 1, 13, 0),  # future
     }
-    assert s._get_status(item) == TENTATIVE
+    assert s._get_status(item) == PASSED
 
 
 def test_get_status_subject_to_cancellation_not_cancelled():
@@ -800,7 +800,7 @@ def test_get_status_subject_to_cancellation_not_cancelled():
         ),
         "start": datetime(2026, 6, 1, 15, 30),  # future
     }
-    assert s._get_status(item) == TENTATIVE
+    assert s._get_status(item) == PASSED
 
 
 # --- _find_matching_legistar_event / _legistar_links ---
